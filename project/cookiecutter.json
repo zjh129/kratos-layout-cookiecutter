@@ -1,0 +1,6 @@
+{
+    "project_name": "Kratos项目名称, 大驼峰命名，例如: KratosDemo",
+    "project_description": "Kratos项目描述",
+    "is_github": "是否开源到github, true/false",
+    "github_username": "github用户名"
+}
