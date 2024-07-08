@@ -3,7 +3,7 @@ package data
 import (
 	"context"
 
-	"{{ cookiecutter.app_name }}/app/user/internal/biz"
+	"{{ cookiecutter.__project_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
 )

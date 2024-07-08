@@ -6,11 +6,11 @@
 package main
 
 import (
-	"{{ cookiecutter.app_name }}/app/user/internal/biz"
-	"{{ cookiecutter.app_name }}/app/user/internal/conf"
-	"{{ cookiecutter.app_name }}/app/user/internal/data"
-	"{{ cookiecutter.app_name }}/app/user/internal/server"
-	"{{ cookiecutter.app_name }}/app/user/internal/service"
+	"{{ cookiecutter.__app_name_camel }}/app/user/internal/biz"
+	"{{ cookiecutter.__app_name_camel }}/app/user/internal/conf"
+	"{{ cookiecutter.__app_name_camel }}/app/user/internal/data"
+	"{{ cookiecutter.__app_name_camel }}/app/user/internal/server"
+	"{{ cookiecutter.__app_name_camel }}/app/user/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"{{ cookiecutter.app_name }}/app/user/internal/conf"
+	"{{ cookiecutter.__project_name_snake }}/app/user/internal/conf"
 
 	"github.com/go-kratos/kratos/v2/config"
 	"github.com/go-kratos/kratos/v2/config/file"

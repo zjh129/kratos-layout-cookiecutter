@@ -1,9 +1,9 @@
 package server
 
 import (
-	{{ cookiecutter.app_name }} "{{ cookiecutter.app_name_camel }}/api/{{ cookiecutter.app_name }}"
-	"{{ cookiecutter.app_name_camel }}/app/user/internal/conf"
-	"{{ cookiecutter.app_name_camel }}/app/user/internal/service"
+	{{ cookiecutter.__app_name_camel }} "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }}"
+	"{{ cookiecutter.app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
+	"{{ cookiecutter.app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
@@ -11,7 +11,7 @@ import (
 )
 
 // NewHTTPServer new an HTTP server.
-func NewHTTPServer(c *conf.Server, {{ cookiecutter.app_name }} *service.{{ cookiecutter.app_name_camel }}Service, logger log.Logger) *http.Server {
+func NewHTTPServer(c *conf.Server, {{ cookiecutter.__app_name_camel }} *service.{{ cookiecutter.app_name_camel }}Service, logger log.Logger) *http.Server {
 	var opts = []http.ServerOption{
 		http.Middleware(
 			recovery.Recovery(),
@@ -27,6 +27,6 @@ func NewHTTPServer(c *conf.Server, {{ cookiecutter.app_name }} *service.{{ cooki
 		opts = append(opts, http.Timeout(c.Http.Timeout.AsDuration()))
 	}
 	srv := http.NewServer(opts...)
-	{{ cookiecutter.app_name }}.Register{{ cookiecutter.app_name_camel }}HTTPServer(srv, {{ cookiecutter.app_name }})
+	{{ cookiecutter.__app_name_camel }}.Register{{ cookiecutter.app_name_camel }}HTTPServer(srv, {{ cookiecutter.__app_name_camel }})
 	return srv
 }
