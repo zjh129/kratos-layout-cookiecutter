@@ -17,5 +17,5 @@ conda install cookiecutter
 
 ### 使用cookiecutter创建项目
 ```shell
-cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git --directory="project" -o ./{your_project_name}
+cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git --directory="project"
 ```
