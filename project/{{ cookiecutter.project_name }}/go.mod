@@ -1,4 +1,4 @@
-module {{ cookiecutter.project_name_snake }}
+module {{ cookiecutter.__project_name_snake }}
 
 go 1.19
 
