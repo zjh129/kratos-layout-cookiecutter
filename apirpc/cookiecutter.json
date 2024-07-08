@@ -2,8 +2,8 @@
     "project_name": "项目名称, 大驼峰命名,空格分隔单词，例如: Kratos Demo",
     "__project_name_camel": "{{ cookiecutter.project_name|replace(' ', '') }}",
     "__project_name_snake": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
-    "app_name": "应用名称, 大驼峰命名,空格分隔单词，例如: Order Api",
+    "app_name": "应用名称, 大驼峰命名,空格分隔单词，例如: Order Srv",
     "__app_name_camel": "{{ cookiecutter.app_name|replace(' ', '') }}",
     "__app_name_pkg": "{{ cookiecutter.app_name|lower|replace(' ', '') }}",
-    "__base_path_app": "app"
+    "__base_path_api": "api"
 }

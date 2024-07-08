@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package {{ cookiecutter.__app_name_pkg }};
+
+option go_package = "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
+option java_multiple_files = true;
+option java_package = "{{ cookiecutter.__app_name_pkg }}";
+option objc_class_prefix = "API{{ cookiecutter.__project_name_camel }}";
+
+enum ErrorReason {
+  GREETER_UNSPECIFIED = 0;
+  USER_NOT_FOUND = 1;
+}

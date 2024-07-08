@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package {{ cookiecutter.__app_name_pkg }};
+
+option go_package = "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
+option java_multiple_files = true;
+option java_package = "api.{{ cookiecutter.__app_name_pkg }}";
+
+import "google/protobuf/empty.proto";
+
+service {{ cookiecutter.__app_name_camel }} {
+    rpc Create{{ cookiecutter.__app_name_camel }} (Create{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
+    rpc Update{{ cookiecutter.__app_name_camel }} (Update{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
+    rpc Delete{{ cookiecutter.__app_name_camel }} (Delete{{ cookiecutter.__app_name_camel }}Request) returns (google.protobuf.Empty);
+    rpc Get{{ cookiecutter.__app_name_camel }} (Get{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
+    rpc List{{ cookiecutter.__app_name_camel }} (List{{ cookiecutter.__app_name_camel }}Request) returns (List{{ cookiecutter.__app_name_camel }}Reply);
+}
+
+// 创建用户请求
+message Create{{ cookiecutter.__app_name_camel }}Request {
+
+}
+// 更新用户请求
+message Update{{ cookiecutter.__app_name_camel }}Request {
+    int64 id = 1;//ID
+}
+// 用户信息
+message {{ cookiecutter.__app_name_camel }}Info {
+    int64 id = 1;//ID
+}
+
+// 列表用户响应
+message Delete{{ cookiecutter.__app_name_camel }}Request {
+    int64 id = 1;//ID
+}
+
+// 但条用户查询请求
+message Get{{ cookiecutter.__app_name_camel }}Request {
+        int64 id = 1;//ID
+}
+
+// 列表用户请求
+message List{{ cookiecutter.__app_name_camel }}Request {
+    int64 page = 1;//页码
+    int64 page_size = 2;//每页数量
+}
+
+// 列表用户响应
+message List{{ cookiecutter.__app_name_camel }}Reply {
+    repeated {{ cookiecutter.__app_name_camel }}Info list = 1; //用户列表
+    int64 count = 2;
+}

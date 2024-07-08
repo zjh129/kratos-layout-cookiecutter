@@ -5,5 +5,5 @@
     "app_name": "应用名称, 大驼峰命名,空格分隔单词，例如: Order Api",
     "__app_name_camel": "{{ cookiecutter.app_name|replace(' ', '') }}",
     "__app_name_pkg": "{{ cookiecutter.app_name|lower|replace(' ', '') }}",
-    "__base_path_app": "app"
+    "__base_path_api": "api"
 }

@@ -1,0 +1,29 @@
+{
+    "templates": {
+        "project": {
+            "path": "./project",
+            "title": "项目创建",
+            "description": "创建一个新的Kratos项目"
+        },
+        "apihttp": {
+            "path": "./apihttp",
+            "title": "HTTP API定义",
+            "description": "进入项目目录，创建一个新的Kratos HTTP API定义"
+        },
+        "appapi": {
+            "path": "./appapi",
+            "title": "HTTP API应用",
+            "description": "进入项目目录，创建一个新的Kratos HTTP API应用"
+        },
+        "apirpc": {
+            "path": "./apirpc",
+            "title": "RPC API定义",
+            "description": "进入项目目录，创建一个新的Kratos RPC API定义"
+        },
+        "apprpc": {
+            "path": "./apprpc",
+            "title": "RPC 微服务应用",
+            "description": "进入项目目录，创建一个新的Kratos RPC 微服务应用"
+        }
+    }
+}
