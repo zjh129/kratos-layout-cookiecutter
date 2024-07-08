@@ -1,5 +1,5 @@
 {
-    "project_name": "Kratos项目名称, 大驼峰命名，例如: Kratos Demo",
-    "__project_name_snake": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",//项目名称，蛇形命名，例如: kratos_demo
-    "project_description": "Kratos项目描述"
+    "project_name": "项目名称, 大驼峰命名,空格分隔单词，例如: Kratos Demo",
+    "__project_name_snake": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+    "project_description": "项目描述"
 }
