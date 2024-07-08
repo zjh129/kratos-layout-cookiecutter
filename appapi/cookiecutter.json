@@ -1,0 +1,6 @@
+{
+    "project_name": "项目名称, 大驼峰命名,空格分隔单词，例如: Kratos Demo",
+    "__project_name_snake": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+    "app_name": "应用名称, 小写命名，例如: orderapi",
+    "app_name_camel": "大驼峰应用名称, 该名称用于定义应用中的类名,例如：OrderApi"
+}

@@ -1,14 +1,14 @@
 package data
 
 import (
-	"kratos-learn/app/user/internal/conf"
+	"{{ cookiecutter.app_name_camel }}/app/user/internal/conf"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
 )
 
 // ProviderSet is data providers.
-var ProviderSet = wire.NewSet(NewData, NewGreeterRepo)
+var ProviderSet = wire.NewSet(NewData, New{{cookiecutter.app_name_camel}}Repo)
 
 // Data .
 type Data struct {

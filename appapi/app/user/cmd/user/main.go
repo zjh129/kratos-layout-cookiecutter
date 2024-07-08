@@ -4,9 +4,8 @@ import (
 	"flag"
 	"os"
 
-	"kratos-learn/app/user/internal/conf"
+	"{{ cookiecutter.app_name }}/app/user/internal/conf"
 
-	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"
 	"github.com/go-kratos/kratos/v2/config/file"
 	"github.com/go-kratos/kratos/v2/log"

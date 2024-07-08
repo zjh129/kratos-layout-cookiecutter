@@ -1,9 +1,9 @@
 package server
 
 import (
-	v1 "kratos-learn/api/helloworld/v1"
-	"kratos-learn/app/user/internal/conf"
-	"kratos-learn/app/user/internal/service"
+	{{ cookiecutter.app_name }} "{{ cookiecutter.app_name_camel }}/api/{{ cookiecutter.app_name }}"
+	"{{ cookiecutter.app_name_camel }}/app/user/internal/conf"
+	"{{ cookiecutter.app_name_camel }}/app/user/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
@@ -11,7 +11,7 @@ import (
 )
 
 // NewHTTPServer new an HTTP server.
-func NewHTTPServer(c *conf.Server, greeter *service.GreeterService, logger log.Logger) *http.Server {
+func NewHTTPServer(c *conf.Server, {{ cookiecutter.app_name }} *service.{{ cookiecutter.app_name_camel }}Service, logger log.Logger) *http.Server {
 	var opts = []http.ServerOption{
 		http.Middleware(
 			recovery.Recovery(),
@@ -27,6 +27,6 @@ func NewHTTPServer(c *conf.Server, greeter *service.GreeterService, logger log.L
 		opts = append(opts, http.Timeout(c.Http.Timeout.AsDuration()))
 	}
 	srv := http.NewServer(opts...)
-	v1.RegisterGreeterHTTPServer(srv, greeter)
+	{{ cookiecutter.app_name }}.Register{{ cookiecutter.app_name_camel }}HTTPServer(srv, {{ cookiecutter.app_name }})
 	return srv
 }

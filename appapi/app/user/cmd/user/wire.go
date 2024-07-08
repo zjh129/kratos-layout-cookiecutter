@@ -6,13 +6,12 @@
 package main
 
 import (
-	"kratos-learn/app/user/internal/biz"
-	"kratos-learn/app/user/internal/conf"
-	"kratos-learn/app/user/internal/data"
-	"kratos-learn/app/user/internal/server"
-	"kratos-learn/app/user/internal/service"
+	"{{ cookiecutter.app_name }}/app/user/internal/biz"
+	"{{ cookiecutter.app_name }}/app/user/internal/conf"
+	"{{ cookiecutter.app_name }}/app/user/internal/data"
+	"{{ cookiecutter.app_name }}/app/user/internal/server"
+	"{{ cookiecutter.app_name }}/app/user/internal/service"
 
-	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
 )

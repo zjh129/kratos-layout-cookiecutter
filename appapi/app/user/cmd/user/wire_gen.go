@@ -9,11 +9,11 @@ package main
 import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
-	"kratos-learn/app/user/internal/biz"
-	"kratos-learn/app/user/internal/conf"
-	"kratos-learn/app/user/internal/data"
-	"kratos-learn/app/user/internal/server"
-	"kratos-learn/app/user/internal/service"
+	"{{ cookiecutter.app_name }}/app/user/internal/biz"
+	"{{ cookiecutter.app_name }}/app/user/internal/conf"
+	"{{ cookiecutter.app_name }}/app/user/internal/data"
+	"{{ cookiecutter.app_name }}/app/user/internal/server"
+	"{{ cookiecutter.app_name }}/app/user/internal/service"
 )
 
 import (
@@ -28,12 +28,12 @@ func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	greeterRepo := data.NewGreeterRepo(dataData, logger)
-	greeterUsecase := biz.NewGreeterUsecase(greeterRepo, logger)
-	greeterService := service.NewGreeterService(greeterUsecase)
-	userService := service.NewUserService(greeterUsecase)
-	grpcServer := server.NewGRPCServer(confServer, greeterService, userService, logger)
-	httpServer := server.NewHTTPServer(confServer, greeterService, logger)
+	{{ cookiecutter.app_name }}Repo := data.New{{ cookiecutter.app_name_camel }}Repo(dataData, logger)
+	{{ cookiecutter.app_name }}Usecase := biz.New{{ cookiecutter.app_name_camel }}Usecase({{ cookiecutter.app_name }}Repo, logger)
+	{{ cookiecutter.app_name }}Service := service.New{{ cookiecutter.app_name_camel }}Service({{ cookiecutter.app_name }}Usecase)
+	userService := service.NewUserService({{ cookiecutter.app_name }}Usecase)
+	grpcServer := server.NewGRPCServer(confServer, {{ cookiecutter.app_name }}Service, userService, logger)
+	httpServer := server.NewHTTPServer(confServer, {{ cookiecutter.app_name }}Service, logger)
 	app := newApp(logger, grpcServer, httpServer)
 	return app, func() {
 		cleanup()

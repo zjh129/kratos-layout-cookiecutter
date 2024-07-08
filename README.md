@@ -19,3 +19,10 @@ conda install cookiecutter
 ```shell
 cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git --directory="project"
 ```
+
+### 使用cookiecutter创建API应用
+```shell
+# 进入到项目目录
+cd {you_project}
+cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git --directory="appapi"
+```
