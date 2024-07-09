@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
+	"github.com/go-kratos/kratos/v2"
 	"os"
 
-	"{{ cookiecutter.__project_name_snake }}/app/user/internal/conf"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
 
 	"github.com/go-kratos/kratos/v2/config"
 	"github.com/go-kratos/kratos/v2/config/file"

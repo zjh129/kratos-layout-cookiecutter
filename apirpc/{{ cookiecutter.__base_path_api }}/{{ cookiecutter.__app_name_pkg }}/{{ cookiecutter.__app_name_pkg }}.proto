@@ -2,18 +2,21 @@ syntax = "proto3";
 
 package {{ cookiecutter.__app_name_pkg }};
 
-option go_package = "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
+option go_package = "{{ cookiecutter.__project_name_snake }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
 option java_multiple_files = true;
 option java_package = "api.{{ cookiecutter.__app_name_pkg }}";
-
-import "google/protobuf/empty.proto";
 
 service {{ cookiecutter.__app_name_camel }} {
     rpc Create{{ cookiecutter.__app_name_camel }} (Create{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
     rpc Update{{ cookiecutter.__app_name_camel }} (Update{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
-    rpc Delete{{ cookiecutter.__app_name_camel }} (Delete{{ cookiecutter.__app_name_camel }}Request) returns (google.protobuf.Empty);
+    rpc Delete{{ cookiecutter.__app_name_camel }} (Delete{{ cookiecutter.__app_name_camel }}Request) returns (Empty);
     rpc Get{{ cookiecutter.__app_name_camel }} (Get{{ cookiecutter.__app_name_camel }}Request) returns ({{ cookiecutter.__app_name_camel }}Info);
     rpc List{{ cookiecutter.__app_name_camel }} (List{{ cookiecutter.__app_name_camel }}Request) returns (List{{ cookiecutter.__app_name_camel }}Reply);
+}
+
+// 空响应
+message Empty {
+
 }
 
 // 创建用户请求

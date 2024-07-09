@@ -26,6 +26,17 @@ cookiecutter https://github.com/zjh129/kratos-layout-cookiecutter.git -f
 ```
 
 # 创建应用和应用后任然需要根据kratos官方命令来生成代码，以下是官方常用命令
+
+### proto文件生成代码，以下命令根据需要替换为自己的proto文件
+```shell
+# 生成 Proto 客户端代码
+kratos proto client api/usersrv/usersrv.proto
+
+# 生成 Proto 服务端代码
+rm -Force app/usersrv/internal/service/usersrv.go
+kratos proto server api/usersrv/usersrv.proto -t app/usersrv/internal/service
+```
+
 ### 生成所有proto源码、wire等等
 ```bash
 go generate ./...

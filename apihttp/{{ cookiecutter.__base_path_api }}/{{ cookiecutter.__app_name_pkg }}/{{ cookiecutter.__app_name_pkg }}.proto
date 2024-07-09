@@ -4,7 +4,7 @@ package {{ cookiecutter.__app_name_pkg }};
 
 import "google/api/annotations.proto";
 
-option go_package = "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
+option go_package = "{{ cookiecutter.__project_name_snake }}/api/{{ cookiecutter.__app_name_pkg }};{{ cookiecutter.__app_name_pkg }}";
 option java_multiple_files = true;
 option java_package = "dev.kratos.api.{{ cookiecutter.__app_name_pkg }}";
 option java_outer_classname = "{{ cookiecutter.__app_name_camel }}Proto";
@@ -17,6 +17,11 @@ service {{ cookiecutter.__app_name_camel }} {
       get: "/helloworld/{name}"
     };
   }
+}
+
+// 空响应
+message Empty {
+
 }
 
 // The request message containing the user's name.
