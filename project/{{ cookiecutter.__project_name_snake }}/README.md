@@ -51,3 +51,21 @@ docker build -t <your-docker-image-name> .
 docker run --rm -p 8000:8000 -p 9000:9000 -v </path/to/your/configs>:/data/conf <your-docker-image-name>
 ```
 
+### 使用cookiecutter
+```shell
+### 使用gitee（推荐：速度快）
+cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git -f
+### 使用github
+cookiecutter https://github.com/zjh129/kratos-layout-cookiecutter.git -f
+```
+
+# 创建应用和应用后任然需要根据kratos官方命令来生成代码，以下是官方常用命令
+### 生成所有proto源码、wire等等
+```bash
+go generate ./...
+```
+
+### 运行程序
+```bash
+kratos run
+```

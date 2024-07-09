@@ -19,8 +19,19 @@ conda install cookiecutter
 
 ### 使用cookiecutter
 ```shell
-### 使用gitee
+### 使用gitee（推荐：速度快）
 cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git -f
 ### 使用github
 cookiecutter https://github.com/zjh129/kratos-layout-cookiecutter.git -f
+```
+
+# 创建应用和应用后任然需要根据kratos官方命令来生成代码，以下是官方常用命令
+### 生成所有proto源码、wire等等
+```bash
+go generate ./...
+```
+
+### 运行程序
+```bash
+kratos run
 ```
