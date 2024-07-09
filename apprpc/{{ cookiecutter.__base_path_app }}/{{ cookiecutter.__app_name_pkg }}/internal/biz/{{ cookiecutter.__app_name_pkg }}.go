@@ -3,8 +3,6 @@ package biz
 import (
 	"context"
 
-	v1 "{{ cookiecutter.__project_name_snake }}/api/{{ cookiecutter.__app_name_pkg }}"
-
 	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"
 )
