@@ -1,6 +1,8 @@
 # 说明
 
-由于官方kratos 创建项目无法做到足够灵活，创建项目或
+由于官方kratos命令脚本 创建项目、创建应用仅仅只是将kratos-layout下载，任然存在Greeter等字眼，没有根据项目名动态生成目录或类，因此使用cookiecutter工具生成项目模板。
+
+该项目模板是基于kratos-layout项目模板进行修改的，主要是将Greeter等字眼替换为项目名，同时将项目名、应用名作为目录名。
 
 # 安装cookiecutter工具
 
@@ -17,5 +19,8 @@ conda install cookiecutter
 
 ### 使用cookiecutter
 ```shell
+### 使用gitee
 cookiecutter https://gitee.com/zhaojianhui/kratos-layout-cookiecutter.git -f
+### 使用github
+cookiecutter https://github.com/zjh129/kratos-layout-cookiecutter.git -f
 ```
