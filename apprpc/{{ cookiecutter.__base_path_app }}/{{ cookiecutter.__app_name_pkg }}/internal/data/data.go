@@ -1,7 +1,7 @@
 package data
 
 import (
-	"{{ cookiecutter.__project_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

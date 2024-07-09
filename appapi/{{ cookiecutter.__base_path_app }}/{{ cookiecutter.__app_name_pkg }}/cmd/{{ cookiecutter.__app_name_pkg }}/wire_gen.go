@@ -28,13 +28,11 @@ func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	{{ cookiecutter.__app_name_camel }}Repo := data.New{{ cookiecutter.__app_name_camel }}Repo(dataData, logger)
-	{{ cookiecutter.__app_name_camel }}Usecase := biz.New{{ cookiecutter.__app_name_camel }}Usecase({{ cookiecutter.__app_name_camel }}Repo, logger)
-	{{ cookiecutter.__app_name_camel }}Service := service.New{{ cookiecutter.__app_name_camel }}Service({{ cookiecutter.__app_name_camel }}Usecase)
-	userService := service.NewUserService({{ cookiecutter.__app_name_camel }}Usecase)
-	grpcServer := server.NewGRPCServer(confServer, {{ cookiecutter.__app_name_camel }}Service, userService, logger)
-	httpServer := server.NewHTTPServer(confServer, {{ cookiecutter.__app_name_camel }}Service, logger)
-	app := newApp(logger, grpcServer, httpServer)
+	{{ cookiecutter.__app_name_pkg }}Repo := data.New{{ cookiecutter.__app_name_camel }}Repo(dataData, logger)
+	{{ cookiecutter.__app_name_pkg }}Usecase := biz.New{{ cookiecutter.__app_name_camel }}Usecase({{ cookiecutter.__app_name_camel }}Repo, logger)
+	{{ cookiecutter.__app_name_pkg }}Service := service.New{{ cookiecutter.__app_name_camel }}Service({{ cookiecutter.__app_name_camel }}Usecase)
+	httpServer := server.NewHTTPServer(confServer, greeterService, logger)
+	app := newApp(logger, nil, httpServer)
 	return app, func() {
 		cleanup()
 	}, nil

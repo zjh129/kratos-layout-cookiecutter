@@ -9,11 +9,6 @@ import (
 	"github.com/go-kratos/kratos/v2/log"
 )
 
-var (
-	// ErrUserNotFound is user not found.
-	ErrUserNotFound = errors.NotFound(v1.ErrorReason_USER_NOT_FOUND.String(), "user not found")
-)
-
 // {{ cookiecutter.__app_name_camel }} is a {{ cookiecutter.__app_name_camel }} model.
 type {{ cookiecutter.__app_name_camel }} struct {
 	Hello string

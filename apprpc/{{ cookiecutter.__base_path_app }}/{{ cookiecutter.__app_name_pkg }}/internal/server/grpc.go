@@ -1,9 +1,9 @@
 package server
 
 import (
-	{{ cookiecutter.__app_name_pkg }}_api "{{ cookiecutter.__project_name_snake }}/api/{{ cookiecutter.__app_name_pkg }}"
-	"github.com/go-kratos/kratos-layout/internal/conf"
-	"github.com/go-kratos/kratos-layout/internal/service"
+	{{ cookiecutter.__app_name_pkg }}api "{{ cookiecutter.__project_name_snake }}/api/{{ cookiecutter.__app_name_pkg }}"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/service"
 
 	
 
@@ -13,7 +13,7 @@ import (
 )
 
 // NewGRPCServer new a gRPC server.
-func NewGRPCServer(c *conf.Server, {{ cookiecutter.__app_name_pkg }} *service.{{ cookiecutter.__app_name_pkg }}Service, logger log.Logger) *grpc.Server {
+func NewGRPCServer(c *conf.Server, {{ cookiecutter.__app_name_pkg }}Service *service.{{ cookiecutter.__app_name_camel }}Service, logger log.Logger) *grpc.Server {
 	var opts = []grpc.ServerOption{
 		grpc.Middleware(
 			recovery.Recovery(),
@@ -29,6 +29,6 @@ func NewGRPCServer(c *conf.Server, {{ cookiecutter.__app_name_pkg }} *service.{{
 		opts = append(opts, grpc.Timeout(c.Grpc.Timeout.AsDuration()))
 	}
 	srv := grpc.NewServer(opts...)
-	{{ cookiecutter.__app_name_pkg }}_api.Register{{ cookiecutter.__app_name_pkg }}Server(srv, {{ cookiecutter.__app_name_pkg }})
+	{{ cookiecutter.__app_name_pkg }}api.Register{{ cookiecutter.__app_name_camel }}Server(srv, {{ cookiecutter.__app_name_pkg }}Service)
 	return srv
 }
