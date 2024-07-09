@@ -1,7 +1,7 @@
 package server
 
 import (
-	{{ cookiecutter.__app_name_camel }} "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }}"
+	{{ cookiecutter.__app_name_camel }}_api "{{ cookiecutter.__project_name_camel }}/api/{{ cookiecutter.__app_name_pkg }}"
 	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
 	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/service"
 
@@ -27,6 +27,6 @@ func NewHTTPServer(c *conf.Server, {{ cookiecutter.__app_name_camel }} *service.
 		opts = append(opts, http.Timeout(c.Http.Timeout.AsDuration()))
 	}
 	srv := http.NewServer(opts...)
-	{{ cookiecutter.__app_name_camel }}.Register{{ cookiecutter.__app_name_camel }}HTTPServer(srv, {{ cookiecutter.__app_name_camel }})
+	{{ cookiecutter.__app_name_camel }}_api.Register{{ cookiecutter.__app_name_camel }}HTTPServer(srv, {{ cookiecutter.__app_name_camel }})
 	return srv
 }

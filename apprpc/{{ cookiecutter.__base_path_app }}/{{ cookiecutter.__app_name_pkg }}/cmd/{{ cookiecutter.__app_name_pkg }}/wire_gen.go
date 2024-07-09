@@ -9,11 +9,11 @@ package main
 import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
-	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/biz"
-	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
-	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/data"
-	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/server"
-	"{{ cookiecutter.__app_name_camel }}/app/{{ cookiecutter.__app_name_pkg }}/internal/service"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/biz"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/conf"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/data"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/server"
+	"{{ cookiecutter.__project_name_snake }}/app/{{ cookiecutter.__app_name_pkg }}/internal/service"
 )
 
 import (
@@ -31,7 +31,7 @@ func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*
 	{{ cookiecutter.__app_name_camel }}Repo := data.New{{ cookiecutter.__app_name_camel }}Repo(dataData, logger)
 	{{ cookiecutter.__app_name_camel }}Usecase := biz.New{{ cookiecutter.__app_name_camel }}Usecase({{ cookiecutter.__app_name_camel }}Repo, logger)
 	{{ cookiecutter.__app_name_camel }}Service := service.New{{ cookiecutter.__app_name_camel }}Service({{ cookiecutter.__app_name_camel }}Usecase)
-	userService := service.NewUserService({{ cookiecutter.__app_name_camel }}Usecase)
+	userService := service.New{{ cookiecutter.__app_name_camel }}Service({{ cookiecutter.__app_name_camel }}Usecase)
 	grpcServer := server.NewGRPCServer(confServer, {{ cookiecutter.__app_name_camel }}Service, userService, logger)
 	httpServer := server.NewHTTPServer(confServer, {{ cookiecutter.__app_name_camel }}Service, logger)
 	app := newApp(logger, grpcServer, httpServer)
